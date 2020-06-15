@@ -322,11 +322,10 @@ async function loadMessages()
       });
 
       chatHtml.innerHTML = html;
+	  $(".scrollable").scrollTop($(".scrollable")[0].scrollHeight);
+
     });
   });
-
-  $(".scrollable").scrollTop($(".scrollable")[0].scrollHeight);
-
 }
 
 function showFindButton(status)
