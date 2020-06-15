@@ -1,0 +1,61 @@
+body{
+  background-color: #30475e;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+#myImage {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+.btn-black {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-black:hover {
+  background: #ddd;
+  color: black;
+}
+
+.messageUser {
+  border-radius: 25px;
+  background: lightgreen;
+}
+
+.messageFriend{
+  border-radius: 25px;
+  background: lightskyblue;
+}
+
+textarea {
+  resize: none;
+}
+
+.scrollable {
+  height:200px;
+  overflow-y: scroll;
+}
