@@ -370,7 +370,6 @@ function reportUser(uid)
         reason: document.getElementById("txtReasonReport").value
       });
       Swal.fire('User reported','','success');
-    clearOverlays();
     }
 
   }) 
