@@ -149,12 +149,26 @@ function googleLogin() {
       Swal.fire("Welcome");
 
       db.collection("Users")
-        .doc(credentials.user.uid)
-        .set({
-          name: user.displayName,
-          coordinates: { latitude: 0, longitude: 0 },
-          active: false,
-        });
+      .doc(user.uid).get((doc) => {
+
+        if(doc.exists)
+        {
+          db.collection("Users")
+          .doc(user.uid).update({
+            name: user.displayName,
+            coordinates: { latitude: 0, longitude: 0 },
+            active: false,
+          });
+        }
+        else {
+          db.collection("Users")
+          .doc(user.uid).set({
+            name: user.displayName,
+            coordinates: { latitude: 0, longitude: 0 },
+            active: false,
+          });
+        }
+      });
     })
     .catch((err) => {
       Swal.fire("Error", err.message, "error");
@@ -174,11 +188,25 @@ function facebookLogin() {
       formRegister.reset();
       Swal.fire("Welcome");
       db.collection("Users")
-        .doc(user.uid)
-        .set({
-          name: user.displayName,
-          coordinates: { latitude: 0, longitude: 0 },
-          active: false,
+        .doc(user.uid).get((doc) => {
+
+          if(doc.exists)
+          {
+            db.collection("Users")
+            .doc(user.uid).update({
+              name: user.displayName,
+              coordinates: { latitude: 0, longitude: 0 },
+              active: false,
+            });
+          }
+          else {
+            db.collection("Users")
+            .doc(user.uid).set({
+              name: user.displayName,
+              coordinates: { latitude: 0, longitude: 0 },
+              active: false,
+            });
+          }
         });
     })
     .catch((err) => {
