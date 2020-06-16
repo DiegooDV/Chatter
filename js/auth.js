@@ -149,7 +149,7 @@ function googleLogin() {
       Swal.fire("Welcome");
 
       db.collection("Users")
-      .doc(user.uid).get((doc) => {
+      .doc(user.uid).get().then((doc) => {
 
         if(doc.exists)
         {
@@ -188,7 +188,7 @@ function facebookLogin() {
       formRegister.reset();
       Swal.fire("Welcome");
       db.collection("Users")
-        .doc(user.uid).get((doc) => {
+        .doc(user.uid).get().then((doc) => {
 
           if(doc.exists)
           {
