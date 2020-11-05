@@ -432,16 +432,16 @@ function loadFriends(snapshot) {
   friendsHtml.innerHTML = html;
   setTimeout(function(){
     loadMessages();
-  },1000)
-}
-
-async function loadMessages()
-{
+  },1000);
   if (login){
     var notification = new Notification('Nuevo mensaje');
   } else {
     login = true;
   }
+}
+
+async function loadMessages()
+{
   
   let friends = [];
 
