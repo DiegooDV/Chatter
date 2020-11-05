@@ -436,6 +436,7 @@ function loadFriends(snapshot) {
 
 async function loadMessages()
 {
+  var notification = new Notification('Nuevo mensaje');
   
   let friends = [];
 
