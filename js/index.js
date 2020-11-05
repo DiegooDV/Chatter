@@ -434,7 +434,7 @@ function loadFriends(snapshot) {
     loadMessages();
   },1000);
   if (login){
-    var notification = new Notification('Nuevo mensaje');
+    var notification = new Notification('Nuevo amigo');
   } else {
     login = true;
   }
@@ -459,6 +459,12 @@ async function loadMessages()
       friends = doc.data().friends;
     }
   })
+
+  if (login){
+    var notification = new Notification('Nuevo mensaje');
+  } else {
+    login = true;
+  }
 
   await db.collection("Messages").orderBy("time", "asc").get().then((messages) => {
 
