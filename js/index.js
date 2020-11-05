@@ -4,6 +4,7 @@ var map;
 var markers = [];
 var userMarker;
 var userD;
+var login = false;
 var coordinates = {
   lat: 0,
   lng: 0,
@@ -436,7 +437,11 @@ function loadFriends(snapshot) {
 
 async function loadMessages()
 {
-  var notification = new Notification('Nuevo mensaje');
+  if (login){
+    var notification = new Notification('Nuevo mensaje');
+  } else {
+    login = true;
+  }
   
   let friends = [];
 
