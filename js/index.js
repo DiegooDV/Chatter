@@ -536,5 +536,11 @@ function sendMessage(friendUID)
 
 }
 
-
-
+function activateNotifications() {
+  if (Notification.permission === 'default') {
+    Notification.requestPermission().then(function(result) {
+      alert('Notificaciones activadas');
+    });
+  }
+};
+activateNotifications();
