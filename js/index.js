@@ -431,7 +431,7 @@ function loadFriends(snapshot) {
           </div>`;
           friendsHtml.innerHTML = html;
 
-          htmlTabs += `<div class="col-6 col-md-4 col-lg-3 m-0 p-1" id="tab${friendUID}">
+          htmlTabs += `<div class="col-6 col-md-4 col-lg-3 m-0 p-1" id="tab${friendUID}" style="display: none;">
           <div class="jumbotron p-2 text-center m-0">
             <p><i class="fa fa-user"></i> ${doc.data().name}</p>
             <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="openChatFromTab('${friendUID}')">Chat <i class="fa fa-commenting"></i></button>
