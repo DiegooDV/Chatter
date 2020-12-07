@@ -572,6 +572,7 @@ function openChatFromTab(friendUid)
 {
   $(`#divChat${friendUid}`).show();
   $(`#tab${friendUid}`).hide();
+  window.scrollTo(0,document.body.scrollHeight);
 
 }
 
