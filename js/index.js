@@ -405,7 +405,7 @@ function loadFriends(snapshot) {
         .doc(friendUID)
         .get()
         .then((doc) => {
-          html += `<div class="col-12 col-md-4" id="divChat${friendUID}" style="display: none;">
+          html += `<div class="col-12 col-md-4" id="divChat${friendUID}" style="display: block;">
             <div class="jumbotron p-0">
               <div class="dropdown d-flex justify-content-end pr-1">
                 <a href="#" data-toggle="dropdown" ><i class="fa fa-cog"></i></a>
