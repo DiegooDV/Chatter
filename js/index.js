@@ -478,6 +478,7 @@ async function loadMessages()
 
     friends.forEach(friend => {
       let chat = messages.docs.filter(function (el) {
+
         return (el.data().from == friend || el.data().from  == userD.uid) && (el.data().to == friend || el.data().to == userD.uid)
       });
 
@@ -502,7 +503,6 @@ async function loadMessages()
       });
 
       chatHtml.innerHTML = html;
-      $(`#divChat${friend}`).hide();
 	  $(".scrollable").scrollTop($(".scrollable")[0].scrollHeight);
 
     });
