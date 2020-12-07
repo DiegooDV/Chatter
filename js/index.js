@@ -429,7 +429,8 @@ function loadFriends(snapshot) {
               </div>
             </div>
           </div>`;
-
+          friendsHtml.innerHTML = html;
+          
           htmlTabs += `<div class="col-6 col-md-4 col-lg-3 m-0 p-1" id="tab${friendUID}">
           <div class="jumbotron p-2 text-center m-0">
             <p><i class="fa fa-user"></i>${doc.data().name}</p>
