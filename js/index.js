@@ -408,8 +408,8 @@ function loadFriends(snapshot) {
           html += `<div class="col-12 col-md-4" id="divChat${friendUID}" style="display: block;">
             <div class="jumbotron p-0">
               <div class="dropdown d-flex justify-content-end pr-1">
-                <a href="#" data-toggle="dropdown" ><i class="fa fa-cog"></i></a>
-                <a href="#"><i class="fa fa-times" onclick="closeChat("${friendUID}");"></i></a>
+                <a href="#" data-toggle="dropdown" class="mr-1" ><i class="fa fa-cog"></i></a>
+                <a href="#" onclick="closeChat('${friendUID}')"><i class="fa fa-times"></i></a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" onclick="removeFriend('${friendUID}')">Remove friend <i class="fa fa-trash"></i></a>
                   <a class="dropdown-item" onclick="reportUser('${friendUID}')" >Report user  <i class="fa fa-exclamation-triangle"></i></a>
@@ -430,13 +430,15 @@ function loadFriends(snapshot) {
             </div>
           </div>`;
           friendsHtml.innerHTML = html;
-          
+
           htmlTabs += `<div class="col-6 col-md-4 col-lg-3 m-0 p-1" id="tab${friendUID}">
           <div class="jumbotron p-2 text-center m-0">
             <p><i class="fa fa-user"></i>${doc.data().name}</p>
             <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="openChatFromTab("${friendUID}")">Chat <i class="fa fa-commenting"></i></button>
           </div>
         </div>`;
+        tabsHtml.innerHTML = htmlTabs;
+
         });
     });
   }
@@ -500,6 +502,7 @@ async function loadMessages()
       });
 
       chatHtml.innerHTML = html;
+      $(`#divChat${friend}`).hide();
 	  $(".scrollable").scrollTop($(".scrollable")[0].scrollHeight);
 
     });
