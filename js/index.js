@@ -409,7 +409,7 @@ function loadFriends(snapshot) {
             <div class="jumbotron p-0">
               <div class="dropdown d-flex justify-content-end pr-1">
                 <a href="#" data-toggle="dropdown" class="mr-1" ><i class="fa fa-cog"></i></a>
-                <a href="#" onclick="closeChat('${friendUID}')"><i class="fa fa-times"></i></a>
+                <a href="#" onclick="closeChat('${friendUID}'); return false;"><i class="fa fa-times"></i></a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" onclick="removeFriend('${friendUID}')">Remove friend <i class="fa fa-trash"></i></a>
                   <a class="dropdown-item" onclick="reportUser('${friendUID}')" >Report user  <i class="fa fa-exclamation-triangle"></i></a>
